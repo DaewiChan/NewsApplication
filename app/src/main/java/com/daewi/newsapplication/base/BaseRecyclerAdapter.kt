@@ -43,16 +43,6 @@ abstract class BaseRecyclerAdapter<T, W : Any>(context: Context) : RecyclerView.
         return if (position < mData!!.size - 1) mData!![position] else null
     }
 
-    fun removeData(data: W) {
-        mData!!.remove(data)
-        notifyDataSetChanged()
-    }
-
-    fun addNewData(data: W) {
-        mData!!.add(data)
-        notifyDataSetChanged()
-    }
-
     fun clearData() {
         mData = ArrayList()
         notifyDataSetChanged()

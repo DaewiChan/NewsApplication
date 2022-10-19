@@ -14,21 +14,6 @@ import com.daewi.newsapplication.R
 import com.daewi.newsapplication.common.DateTimeUtil
 
 class NewsDetailsFragment: Fragment() {
-    companion object {
-        fun newInstance(title: String, description: String, author: String, time: String, imageUrl: String, content: String): NewsDetailsFragment {
-            val f = NewsDetailsFragment()
-            // Supply num input as an argument.
-            val args = Bundle()
-            args.putString("title", title)
-            args.putString("description", description)
-            args.putString("author", author)
-            args.putString("time", time)
-            args.putString("imageUrl", imageUrl)
-            args.putString("content", content)
-            f.arguments = args
-            return f
-        }
-    }
 
     private var tvTitle: TextView? = null
     private var tvDescription: TextView? = null

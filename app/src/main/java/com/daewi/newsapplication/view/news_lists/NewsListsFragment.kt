@@ -190,7 +190,7 @@ class NewsListsFragment: Fragment(),NewsListsDelegate {
 
     private fun updateUI(){
         //the observer will only receive events if the owner(activity) is in active state
-        //invoked when movieList data changes
+        //invoked when newsList data changes
         newsListsViewModel.newsLists.observe(viewLifecycleOwner, Observer{
             it.let {
                 this.newsDataLists = it as MutableList<ArticleDataVO>
@@ -201,10 +201,6 @@ class NewsListsFragment: Fragment(),NewsListsDelegate {
 
         Log.e("sdfsaf===>","Success")
 
-        //invoked when a network exception occurred
-        if (newsListsViewModel.errorMessage != ""){
-            Toast.makeText(requireContext(),"${newsListsViewModel.errorMessage}", Toast.LENGTH_SHORT).show()
-        }
     }
 
     override fun onTapNews(data: ArticleDataVO) {

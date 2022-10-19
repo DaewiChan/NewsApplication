@@ -19,7 +19,7 @@ abstract class PaginationScrollListener (var layoutManager: LinearLayoutManager)
             if (!isLoading() && !isLastPage()) {
                 if (visibleItemCount + firstVisibleItemPosition >= totalItemCount && firstVisibleItemPosition >= 0) {
                     loadMoreItems()
-                }//                    && totalItemCount >= ClothesFragment.itemsCount
+                }
             }
 
         }else if (dy > 0) {
@@ -29,7 +29,7 @@ abstract class PaginationScrollListener (var layoutManager: LinearLayoutManager)
             if (!isLoading() && !isLastPage()) {
                 if (visibleItemCount + firstVisibleItemPosition >= totalItemCount && firstVisibleItemPosition >= 0) {
                     loadMoreItems()
-                }//                    && totalItemCount >= ClothesFragment.itemsCount
+                }
             }
 
         }

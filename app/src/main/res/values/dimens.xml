@@ -1,7 +1,4 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="design_navigation_icon_size" tools:override="true">40dp</dimen>
 
@@ -22,12 +19,6 @@
     <dimen name="margin_20">20dp</dimen>
     <dimen name="margin_24">24dp</dimen>
     <dimen name="margin_26">26dp</dimen>
-    <dimen name="margin_30">30dp</dimen>
-    <dimen name="margin_xlarge">32dp</dimen>
-    <dimen name="margin_40">40dp</dimen>
-    <dimen name="margin_xxlarge">48dp</dimen>
-    <dimen name="margin_50">50dp</dimen>
-    <dimen name="dp_36">30dp</dimen>
 
     <dimen name="dp_favorite_and_cart">26dp</dimen>
 
@@ -39,13 +30,6 @@
     <dimen name="text_regular_3x">20sp</dimen>
     <dimen name="text_heading_1x">24sp</dimen>
     <dimen name="text_heading_2x">32sp</dimen>
-    <dimen name="text_big">40sp</dimen>
-    <dimen name="text_big_2x">60sp</dimen>
-    <dimen name="text_big_3x">80sp</dimen>
-    <dimen name="iv_banking">30sp</dimen>
-
-    <dimen name="margin_150">150dp</dimen>
-    <dimen name="margin_item_product">190dp</dimen>
     <dimen name="text_regular_24">24sp</dimen>
     <dimen name="text_regular_36">36sp</dimen>
     <dimen name="text_regular_20">20sp</dimen>

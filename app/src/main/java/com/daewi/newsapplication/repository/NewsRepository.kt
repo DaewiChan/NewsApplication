@@ -3,7 +3,6 @@ package com.daewi.newsapplication.repository
 import com.daewi.newsapplication.domain.remote.ApiFactory
 
 class NewsRepository constructor(private val apiFactory: ApiFactory) {
-    //var apiFactory = ApiFactory.newsApi
 
-    fun getNewsLists(key: String,page: Int,pageSize: Int) = apiFactory.newsApi.getNewsApi(key,"54c056aac04a4f59a48b6c7af7171a71",page,pageSize)
+    fun getNewsLists(key: String,page: Int,pageSize: Int) = apiFactory.newsApi.getNewsApi(key,"7b624cf7f6dd432f8d7bf0ce96804b06",page,pageSize)
 }
