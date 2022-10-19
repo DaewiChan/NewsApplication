@@ -43,7 +43,7 @@ class NewsListsFragment: Fragment(),NewsListsDelegate {
     var isLoading: Boolean = false
     var isLastPage: Boolean = false
     private var currentPageNO: Int = 1
-    private var totalPageNo: Int = 50
+    private var totalPageNo: Int = 10
 
     private var searchKey: String? = null
 
@@ -97,7 +97,7 @@ class NewsListsFragment: Fragment(),NewsListsDelegate {
             }
 
             override fun loadMoreItems() {
-                isLoading = true
+               // isLoading = true
                 //you have to call loadmore items to get more data
                 getMoreNews()
             }
@@ -105,10 +105,12 @@ class NewsListsFragment: Fragment(),NewsListsDelegate {
     }
 
     fun getMoreNews() {
-        isLoading = false
 
         if (currentPageNO == totalPageNo) {
             isLastPage = true
+            isLoading = true
+        }else{
+            isLoading = false
         }
 
         currentPageNO++

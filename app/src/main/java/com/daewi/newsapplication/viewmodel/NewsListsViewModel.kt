@@ -51,8 +51,8 @@ class NewsListsViewModel constructor(private val repository: NewsRepository, pri
                     if (error is HttpException) {
                         val errorJsonString = error.response()!!.errorBody()?.string()
                         val jsonObject = JSONObject(errorJsonString)
-                        if (jsonObject.has("message")){
-                          var  errorMessage = jsonObject.getString("message")
+                        if (jsonObject.has("code")){
+                          var  errorMessage = jsonObject.getString("code")
                             showError(errorMessage)
                         }
                     } else {
