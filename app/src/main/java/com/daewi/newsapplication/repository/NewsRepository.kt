@@ -1,6 +1,6 @@
 package com.daewi.newsapplication.repository
 
-import com.daewi.newsapplication.data.remote.ApiFactory
+import com.daewi.newsapplication.domain.remote.ApiFactory
 
 class NewsRepository constructor(private val apiFactory: ApiFactory) {
     //var apiFactory = ApiFactory.newsApi

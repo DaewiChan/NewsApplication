@@ -1,4 +1,4 @@
-package com.daewi.newsapplication.data.dto
+package com.daewi.newsapplication.domain.dto
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

@@ -1,19 +1,21 @@
 package com.daewi.newsapplication.viewmodel
 
+import android.content.Context
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.daewi.newsapplication.common.JSONUtil
-import com.daewi.newsapplication.data.db.RealmHelper
-import com.daewi.newsapplication.data.dto.ArticleDataVO
+import com.daewi.newsapplication.domain.db.RealmHelper
+import com.daewi.newsapplication.domain.dto.ArticleDataVO
 import com.daewi.newsapplication.repository.NewsRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import retrofit2.HttpException
 
-class NewsListsViewModel constructor(private val repository: NewsRepository, private val realm: RealmHelper,private val progress: ProgressBar): ViewModel(){
+class NewsListsViewModel constructor(private val repository: NewsRepository, private val realm: RealmHelper,private val progress: ProgressBar,private val context: Context): ViewModel(){
 
     val newsLists = MutableLiveData<List<ArticleDataVO>>()
     var errorMessage: String = ""
@@ -22,6 +24,10 @@ class NewsListsViewModel constructor(private val repository: NewsRepository, pri
     }
     fun hideProgress(){
         progress?.visibility = View.GONE
+    }
+
+    fun showError(message: String){
+        Toast.makeText(context,message,Toast.LENGTH_SHORT).show()
     }
 
     var subsciption: Disposable? = null
@@ -50,6 +56,7 @@ class NewsListsViewModel constructor(private val repository: NewsRepository, pri
                         val errorJsonString = error.response()!!.errorBody()?.string()
                         val errMessage = JSONUtil().parseError(errorJsonString!!)
                         this.errorMessage = errMessage
+                        showError(errorMessage)
                         //view.showError(errMessage)
                     } else {
                         val errorMessage = error.message ?: ""

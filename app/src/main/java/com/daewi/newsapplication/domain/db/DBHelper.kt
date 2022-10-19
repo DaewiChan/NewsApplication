@@ -1,6 +1,6 @@
-package com.daewi.newsapplication.data.db
+package com.daewi.newsapplication.domain.db
 
-import com.daewi.newsapplication.data.dto.ArticleDataVO
+import com.daewi.newsapplication.domain.dto.ArticleDataVO
 
 interface DBHelper {
 

@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.ViewGroup
 import com.daewi.newsapplication.R
 import com.daewi.newsapplication.base.BaseRecyclerAdapter
-import com.daewi.newsapplication.data.dto.ArticleDataVO
+import com.daewi.newsapplication.domain.dto.ArticleDataVO
 import com.daewi.newsapplication.delegate.NewsListsDelegate
 import com.daewi.newsapplication.view.adapter.viewholder.NewsListVH
 

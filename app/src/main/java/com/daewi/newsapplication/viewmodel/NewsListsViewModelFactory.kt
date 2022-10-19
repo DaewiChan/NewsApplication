@@ -1,8 +1,7 @@
 package com.daewi.newsapplication.viewmodel
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.daewi.newsapplication.data.db.RealmHelper
+import com.daewi.newsapplication.domain.db.RealmHelper
 import com.daewi.newsapplication.repository.NewsRepository
 
 class NewsListsViewModelFactory constructor(private val repository: NewsRepository,private val realm: RealmHelper): ViewModel() {

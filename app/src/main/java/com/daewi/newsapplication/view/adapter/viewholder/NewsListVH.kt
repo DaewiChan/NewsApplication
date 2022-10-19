@@ -6,17 +6,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.daewi.newsapplication.R
 import com.daewi.newsapplication.base.BaseViewHolder
 import com.daewi.newsapplication.common.DateTimeUtil
-import com.daewi.newsapplication.data.dto.ArticleDataVO
+import com.daewi.newsapplication.domain.dto.ArticleDataVO
 import com.daewi.newsapplication.delegate.NewsListsDelegate
-import java.text.SimpleDateFormat
-import java.time.format.DateTimeFormatter
-import java.util.*
 
 
 class NewsListVH(

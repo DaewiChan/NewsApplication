@@ -1,6 +1,6 @@
-package com.daewi.newsapplication.data.remote.api
+package com.daewi.newsapplication.domain.remote.api
 
-import com.daewi.newsapplication.data.dto.NewsDataResponse
+import com.daewi.newsapplication.domain.dto.NewsDataResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Headers

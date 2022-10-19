@@ -12,24 +12,20 @@ import android.widget.*
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.daewi.newsapplication.R
 import com.daewi.newsapplication.common.NetworkUtilities
-import com.daewi.newsapplication.data.db.RealmHelper
-import com.daewi.newsapplication.data.dto.ArticleDataVO
-import com.daewi.newsapplication.data.remote.ApiFactory
-import com.daewi.newsapplication.databinding.ActivityMainBinding
+import com.daewi.newsapplication.domain.db.RealmHelper
+import com.daewi.newsapplication.domain.dto.ArticleDataVO
+import com.daewi.newsapplication.domain.remote.ApiFactory
 import com.daewi.newsapplication.delegate.NewsListsDelegate
 import com.daewi.newsapplication.repository.NewsRepository
 import com.daewi.newsapplication.view.adapter.NewsListAdapter
 import com.daewi.newsapplication.view.adapter.PaginationScrollListener
-import com.daewi.newsapplication.view.news_details.NewsDetailsFragment
 import com.daewi.newsapplication.viewmodel.NewsListsViewModel
-import com.daewi.newsapplication.viewmodel.NewsListsViewModelFactory
 
 class NewsListsFragment: Fragment(),NewsListsDelegate {
     private val TAG = "NewsFragment"
@@ -68,7 +64,7 @@ class NewsListsFragment: Fragment(),NewsListsDelegate {
         ivSearch = view.findViewById(R.id.ivSearch)
         progressBar = view.findViewById(R.id.progressBar)
 
-        newsListsViewModel = NewsListsViewModel(NewsRepository(ApiFactory),RealmHelper(),progressBar!!)
+        newsListsViewModel = NewsListsViewModel(NewsRepository(ApiFactory),RealmHelper(),progressBar!!,requireContext())
 
         bindAdapter()
         if (NetworkUtilities().isConnected(requireContext())){
@@ -206,7 +202,9 @@ class NewsListsFragment: Fragment(),NewsListsDelegate {
         Log.e("sdfsaf===>","Success")
 
         //invoked when a network exception occurred
-       // Toast.makeText(requireContext(),"${newsListsViewModel.errorMessage}", Toast.LENGTH_SHORT).show()
+        if (newsListsViewModel.errorMessage != ""){
+            Toast.makeText(requireContext(),"${newsListsViewModel.errorMessage}", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onTapNews(data: ArticleDataVO) {

@@ -1,4 +1,4 @@
-package com.daewi.newsapplication.data.remote
+package com.daewi.newsapplication.domain.remote
 
 import com.daewi.newsapplication.extension.moshi.RealmListJsonAdapterFactory
 import com.squareup.moshi.Moshi
@@ -8,7 +8,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
 
 object RetrofitService {
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
